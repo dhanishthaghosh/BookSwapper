@@ -19,23 +19,23 @@ function Navbar() {
                 <div className="collapse navbar-collapse">
                     <ul className={click ? 'nav-menu-active navbar-nav ml-auto' : 'nav-menu navbar-nav ml-auto'}>
                         <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
-                            <Link to='/' className='nav-link' onClick={closeMobileMenu}> Home
+                            <Link to='/' className='nav-link nav-link-style' onClick={closeMobileMenu}> Home
                             </Link>
                         </li>
                         <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
-                            <Link to='/about' className='nav-link' onClick={closeMobileMenu}> About Us
+                            <Link to='/about' className='nav-link nav-link-style' onClick={closeMobileMenu}> About Us
                             </Link>
                         </li>
                         <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
-                            <Link to='/contact' className='nav-link' onClick={closeMobileMenu}> Contact Us
+                            <Link to='/contact' className='nav-link nav-link-style' onClick={closeMobileMenu}> Contact Us
                             </Link>
                         </li>
                         <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
-                            <Link to='/login' className='nav-link' onClick={closeMobileMenu}> Login
+                            <Link to='/login' className='nav-link nav-link-style' onClick={closeMobileMenu}> Login
                             </Link>
                         </li>
                         <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
-                            <Link to='/signup' className='nav-link' onClick={closeMobileMenu}> Sign Up
+                            <Link to='/signup' className='nav-link nav-link-style' onClick={closeMobileMenu}> Sign Up
                             </Link>
                         </li>
                     </ul>

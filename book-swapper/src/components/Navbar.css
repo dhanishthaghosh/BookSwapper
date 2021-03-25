@@ -5,6 +5,7 @@
 
 .branding {
     font-size: xx-large;
+    color:midnightblue;
 }
 
 .nav-item-style {
@@ -12,4 +13,8 @@
     padding-left: 5px;
     padding-right: 5px;
     /* color: black; */
+}
+
+.nav-link-style {
+    color: midnightblue;
 }
