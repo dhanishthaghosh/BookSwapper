@@ -7,9 +7,9 @@ function Navbar() {
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
     return (
-        <div className="container">
-            <nav className="navbar navbar-expand-md">    
-                <Link to="/" className="navbar-brand">
+        <div className="container navbar-styles">
+            <nav className="navbar navbar-expand-md my-auto">    
+                <Link to="/" className="navbar-brand branding">
                     BookSwapper <i className="fas fa-exchange-alt"></i>
                 </Link>
                 <button className="navbar-toggler" onClick={handleClick}>
@@ -18,23 +18,23 @@ function Navbar() {
 
                 <div className="collapse navbar-collapse">
                     <ul className={click ? 'nav-menu-active navbar-nav ml-auto' : 'nav-menu navbar-nav ml-auto'}>
-                        <li className={click ? 'nav-item active' : 'nav-item'}>
+                        <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
                             <Link to='/' className='nav-link' onClick={closeMobileMenu}> Home
                             </Link>
                         </li>
-                        <li className={click ? 'nav-item active' : 'nav-item'}>
+                        <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
                             <Link to='/about' className='nav-link' onClick={closeMobileMenu}> About Us
                             </Link>
                         </li>
-                        <li className={click ? 'nav-item active' : 'nav-item'}>
+                        <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
                             <Link to='/contact' className='nav-link' onClick={closeMobileMenu}> Contact Us
                             </Link>
                         </li>
-                        <li className={click ? 'nav-item active' : 'nav-item'}>
+                        <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
                             <Link to='/login' className='nav-link' onClick={closeMobileMenu}> Login
                             </Link>
                         </li>
-                        <li className={click ? 'nav-item active' : 'nav-item'}>
+                        <li className={click ? 'nav-item active nav-item-style' : 'nav-item nav-item-style'}>
                             <Link to='/signup' className='nav-link' onClick={closeMobileMenu}> Sign Up
                             </Link>
                         </li>
