@@ -4,7 +4,7 @@ import {ReactComponent as Book} from '../images/Books.svg';
 
 function AboutUs() {
     return(
-        <div className="row front-page-style">
+        <div className="row front-page-style" id="aboutus">
                 <div className="col img-fluid">
                         <Book />
                 </div> 

@@ -5,7 +5,7 @@
 
 .branding {
     font-size: xx-large;
-    color:midnightblue;
+    color: #000000;
 }
 
 .nav-item-style {
@@ -16,5 +16,19 @@
 }
 
 .nav-link-style {
-    color: midnightblue;
+    color: #000000;
 }
+
+.nav-colored {
+    /* background-color: #29ab87;   jungle green*/
+    background-color: #01796f;  /*pine green */
+    /* background-color: #2e8b57;   sea green */
+}
+
+.nav-transparent {
+    background-color: transparent;
+}
+
+/* @media(max-width: 760px) {
+
+} */
