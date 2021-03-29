@@ -4,7 +4,7 @@ import {ReactComponent as Bibliophile} from '../images/Bibliophile.svg';
 
 export default function Intro() {
     return (
-        <>
+        <div className='container'>
            <div className="row front-page-style" id="home">
                 <div className="col my-auto">
                     <h2>LQu'est-ce que le Lorem Ipsum?</h2>
@@ -15,6 +15,6 @@ export default function Intro() {
                     <Bibliophile />
                 </div>
             </div> 
-        </>
+        </div>
     );
 }

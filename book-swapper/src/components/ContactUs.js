@@ -4,7 +4,7 @@ import {ReactComponent as Contact} from '../images/ContactUs.svg';;
 
 function ContactUs() {
     return (
-        <>
+        <div className="container">
            <div className="row front-page-style" id="contactus">
                 <div className="col my-auto">
                     <h2>LQu'est-ce que le Lorem Ipsum?</h2>
@@ -15,7 +15,7 @@ function ContactUs() {
                     <Contact />
                 </div>
             </div> 
-        </>
+        </div>
     );
 }
 
