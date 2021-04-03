@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Navbar from './components/Navbar';
+import Navbar_2 from './components/Navbar_2';
 import Frontpage from './components/Frontpage';
 import {BrowserRouter as Router, Switch, Route, BrowserRouter} from 'react-router-dom';
 import AboutUs from './components/AboutUs';
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="backgroundImage">
       <BrowserRouter>
-        <Navbar />
+        <Navbar_2 />
         <Switch>
           <Route exact path='/' component={Frontpage} />
           <Route exact path='/home' component={Frontpage} />

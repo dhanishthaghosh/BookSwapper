@@ -33,8 +33,8 @@ function Footer() {
                     <div className='col-12 col-md-4'>
                         <p className="footer-sub-header">The Creators</p>
                         <p className='footer-creator'>Dhanishtha Ghosh</p>
+                        <p className='footer-creator'>Dixit Mendon</p>
                         <p className='footer-creator'>Nishant Dongre</p>
-                        <p className='footer-creator'>XYZ</p>
                         <p className='footer-creator'>Vanshita Singh</p>
                     </div>
                 </div>

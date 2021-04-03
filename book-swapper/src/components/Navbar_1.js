@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-scroll';
-import './Navbar.css';
+import './Navbar_1.css';
+import { Button } from './Button';
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -25,7 +26,7 @@ function Navbar() {
 
 
     const changeNavbarBackground = () => {
-        if(window.scrollY >= 115) {
+        if(window.scrollY >= 112) {
             setNavbar(true);
         } else {
             setNavbar(false);
@@ -42,6 +43,7 @@ function Navbar() {
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle Navigation" onClick={handleClick}>
                     <i className={click ? 'far fa-times-circle' : 'fas fa-bars'}></i>
+                    {/* <span class="navbar-toggler-icon"></span> */}
                 </button>
 
                 <div className="collapse navbar-collapse">
@@ -67,7 +69,7 @@ function Navbar() {
                             </Link>
                         </li>
                     </ul>
-                    {button} 
+                    {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>} 
                 </div>
             
             </div>
