@@ -39,6 +39,9 @@ function Footer() {
                     </div>
                 </div>
                 
+                <div className='row justify-content-center copyright'>
+                    <span>BookSwapper &copy; 2021</span>
+                </div>
             </div>
         </footer>
     );

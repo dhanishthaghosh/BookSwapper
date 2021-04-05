@@ -39,19 +39,19 @@ function Navbar_2() {
     return (
         <Navbar expand='lg' className={navbar ? 'sticky-top nav-colored' : 'sticky-top nav-transparent'} id="navbar-component">
             <div className="container navbar-styles">   
-                <Navbar.Brand href='home' spy={true} smooth={true} offset={50} duration={500} delay={200} id='branding'>BookSwapper <i className="fas fa-exchange-alt"></i></Navbar.Brand> 
+                <Navbar.Brand id='branding'><Link to='home' spy={true} smooth={true} offset={0} duration={500} delay={200}>BookSwapper <i className="fas fa-exchange-alt"></i></Link></Navbar.Brand>
                     
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link href="#home" className='nav-link-style' spy={true} smooth={true} offset={50} duration={500} delay={200}>Home</Nav.Link>
+                        <Nav.Link className='nav-link-style'><Link to='home' spy={true} smooth={true} offset={0} duration={500} delay={200}>Home</Link></Nav.Link>
 
-                        <Nav.Link href="#aboutus" className='nav-link-style' spy={true} smooth={true} offset={50} duration={500} delay={200}>About Us</Nav.Link>
+                        <Nav.Link className='nav-link-style'><Link to='aboutus' spy={true} smooth={true} offset={0} duration={500} delay={200}>About Us</Link></Nav.Link>
 
-                        <Nav.Link href="#contactus" className='nav-link-style' spy={true} smooth={true} offset={50} duration={500} delay={200}>Contact Us</Nav.Link>
+                        <Nav.Link className='nav-link-style'><Link to='contactus' spy={true} smooth={true} offset={0} duration={500} delay={200}>Contact Us</Link></Nav.Link>
                         
-                        <Nav.Link href="#" className='nav-link-style'>Login</Nav.Link>
+                        <Nav.Link className='nav-link-style'><Link to='' spy={true} smooth={true} offset={0} duration={500} delay={200}>Login</Link></Nav.Link>
 
                         {button && <Button className='btn-effect sp-effect'>Sign Up</Button>}
                     </Nav>
