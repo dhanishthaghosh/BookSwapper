@@ -9,6 +9,32 @@
     cursor: pointer;
 }
 
+/* #branding-nonmain {
+    font-size: 25px !important;
+    color: ghostwhite !important;
+    cursor: pointer;
+    text-align: center !important;
+    align-content: center !important;
+    align-items: center !important;
+} */
+
+.router-links {
+    /* display: flex; */
+    color: ghostwhite;
+    width: 100vw;
+    text-align: center;
+    align-items: center !important;
+    justify-content: center;
+    transform: translateX(100);
+    right: 100px;
+    text-decoration: none;
+}
+
+.router-links:hover {
+    color: lemonchiffon;
+    text-decoration: none;
+}
+
 .nav-colored #branding {
     color: ghostwhite !important;
 }

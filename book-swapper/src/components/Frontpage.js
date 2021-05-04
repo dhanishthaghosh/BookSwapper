@@ -6,11 +6,13 @@ import Intro from './Intro';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import Footer from './Footer';
+import Navigation from './Navigation';
 import './Frontpage.css';
 
 function Frontpage() {
     return (
         <div>
+            <Navigation />
             <Intro />
             <AboutUs />
             <ContactUs />

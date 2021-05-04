@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-scroll';
-import './Navbar_2.css';
+import {Link as DomLink} from 'react-router-dom';
+import './Navigation.css';
 // import { Button } from './Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 import Button from 'react-bootstrap/Button';
 
-function Navbar_2() {
+function Navigation() {
 
     const [button, setButton] = useState(true);
     const [navbar, setNavbar] = useState(false);
@@ -45,6 +46,8 @@ function Navbar_2() {
 
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
+                        <Nav.Link className='nav-link-style'><DomLink to='/bookDisplay'>BookDisplay</DomLink></Nav.Link>
+
                         <Nav.Link className='nav-link-style'><Link to='home' spy={true} smooth={true} offset={0} duration={500} delay={200}>Home</Link></Nav.Link>
 
                         <Nav.Link className='nav-link-style'><Link to='aboutus' spy={true} smooth={true} offset={0} duration={500} delay={200}>About Us</Link></Nav.Link>
@@ -78,4 +81,4 @@ function Navbar_2() {
 //         }
 // };
 
-export default Navbar_2;
+export default Navigation;
