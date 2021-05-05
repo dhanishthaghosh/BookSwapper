@@ -7,8 +7,12 @@ import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import Intro from './components/Intro';
 import MainBookDisplay from './components/MainBookDisplay';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
+  
+
   return (
     <div className="backgroundImage">
       <BrowserRouter>
@@ -19,6 +23,8 @@ function App() {
           <Route exact path='/intro' component={Intro} />
           <Route exact path='/aboutus' component={AboutUs} />
           <Route exact path='/contactus' component={ContactUs} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/register' component={Register} />
           <Route exact path='/bookDisplay' component={MainBookDisplay} />
         </Switch>
       </BrowserRouter>

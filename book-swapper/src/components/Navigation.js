@@ -54,9 +54,9 @@ function Navigation() {
 
                         <Nav.Link className='nav-link-style'><Link to='contactus' spy={true} smooth={true} offset={0} duration={500} delay={200}>Contact Us</Link></Nav.Link>
                         
-                        <Nav.Link className='nav-link-style'><Link to='' spy={true} smooth={true} offset={0} duration={500} delay={200}>Login</Link></Nav.Link>
+                        <Nav.Link className='nav-link-style'><DomLink to='/login'>Login</DomLink></Nav.Link>
 
-                        {button && <Button className='btn-effect sp-effect'>Sign Up</Button>}
+                        {button && <Button className='btn-effect sp-effect'><DomLink to='/register'>Sign up</DomLink></Button>}
                     </Nav>
                      
                 </Navbar.Collapse>
