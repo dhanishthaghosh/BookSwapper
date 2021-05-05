@@ -1,0 +1,26 @@
+.book-name-input {
+    /* border: 4px solid rosybrown; */
+    border: none;
+    border-radius: 35px;
+    -webkit-box-shadow: inset 0 0 8px  rgba(0,0,0,0.3),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: inset 0 0 8px  rgba(0,0,0,0.3),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: inset 0 0 8px  rgba(0,0,0,0.3),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 10px;
+    /* background: rgba(255, 255, 255, 0.75); */
+    background: linear-gradient(whitesmoke, white);
+    margin: 14px 0 14px 0;
+
+}
+
+.search-icon {
+    position: absolute;
+    top: calc(50% - 0.5em);
+    color: gray;
+}
+
+.input-wrapper {
+    position: relative;
+}

@@ -7,6 +7,7 @@ import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import Intro from './components/Intro';
 import MainBookDisplay from './components/MainBookDisplay';
+import AllBooksPage from './components/AllBooksPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route exact path='/aboutus' component={AboutUs} />
           <Route exact path='/contactus' component={ContactUs} />
           <Route exact path='/bookDisplay' component={MainBookDisplay} />
+          <Route exact path='/allBooks' component={AllBooksPage} />
         </Switch>
       </BrowserRouter>
  

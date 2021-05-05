@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 // import {ReactComponent as Map} from '../images/MumbaiMap.jpg';
 // var Map = require('../images/MumbaiMap.jpg');
+import SearchBar from './SearchBar';
 import Map from '../images/MumbaiMap.jpg';
 import './Navigation.css';
 import './MainBookDisplay.css';
@@ -45,10 +46,14 @@ export class MainBookDisplay extends Component {
                     </div>
 
                     <div className='col-lg-5'>
-                        <form onSubmit={this.handleSubmit}>
-                            <input type='text' value={this.state.value} onChange={this.handleChange} placeholder='Type book name here' className='book-name-input'></input>
-                            <input type='submit' value='Search' className='submit-button'></input>
-                        </form>
+                        {/* <div className='input-wrapper'>
+                            <form onSubmit={this.handleSubmit}>
+                                <input type='text' value={this.state.value} onChange={this.handleChange} placeholder='Type book name here' className='book-name-input'></input>
+                                <i class="fas fa-search search-icon"></i>
+                                <input type='submit' value='Search' className='submit-button'></input> 
+                            </form>
+                        </div> */}
+                        <SearchBar />
 
                         <h3>Book Information</h3>
                         <p><b>Name:</b> The Tempest</p>

@@ -48,6 +48,8 @@ function Navigation() {
                     <Nav className="ml-auto">
                         <Nav.Link className='nav-link-style'><DomLink to='/bookDisplay'>BookDisplay</DomLink></Nav.Link>
 
+                        <Nav.Link className='nav-link-style'><DomLink to='/allBooks'>AllBooks</DomLink></Nav.Link>
+
                         <Nav.Link className='nav-link-style'><Link to='home' spy={true} smooth={true} offset={0} duration={500} delay={200}>Home</Link></Nav.Link>
 
                         <Nav.Link className='nav-link-style'><Link to='aboutus' spy={true} smooth={true} offset={0} duration={500} delay={200}>About Us</Link></Nav.Link>
