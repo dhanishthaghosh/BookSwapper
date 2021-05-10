@@ -1,0 +1,139 @@
+.navbar-styles {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#branding {
+    font-size: xx-large !important;
+    color: #000000 !important;
+    cursor: pointer;
+}
+
+/* #branding-nonmain {
+    font-size: 25px !important;
+    color: ghostwhite !important;
+    cursor: pointer;
+    text-align: center !important;
+    align-content: center !important;
+    align-items: center !important;
+} */
+
+.router-links {
+    /* display: flex; */
+    color: ghostwhite;
+    width: 100vw;
+    text-align: center;
+    align-items: center !important;
+    justify-content: center;
+    transform: translateX(100);
+    right: 100px;
+    text-decoration: none;
+}
+
+.router-links:hover {
+    color: lemonchiffon;
+    text-decoration: none;
+}
+
+.nav-colored #branding {
+    color: ghostwhite !important;
+}
+
+.nav-link-style {
+    font-size: large !important;
+    color:#353839 !important;
+}
+
+.nav-link-style:hover {
+    color: #E4007C !important;
+}
+
+
+.nav-colored .nav-link-style {
+    /* color: #ADD8E6; */
+    /* color: #AFDBF5; */
+    /* color: #76ABDF; */
+    color: mintcream !important;
+    cursor: pointer;
+}
+
+.nav-colored .nav-link-style:hover {
+    color: #FFAA1D !important;
+    cursor: pointer;
+}
+
+.nav-colored {
+    /* background-color: #29ab87;   jungle green*/
+    background-color: #01796f;  /*pine green */
+    /* background-color: #2e8b57;   sea green */
+}
+
+.nav-transparent {
+    background-color: transparent;
+}
+
+
+.btn-effect {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: capitalize;
+    background-color: #E4007C;
+    font-size: large;
+    /* padding: 20px 0px; */
+    width: 120px;
+    border-radius: 6px;
+    border-color: #E4007C;
+    overflow: hidden;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.nav-colored .btn-effect {
+    background-color: #FFAA1D;
+    color: #000000;
+    border-color: #FFAA1D;
+}
+
+.nav-transparent .btn-effect.sp-effect, .nav-colored .btn-effect.sp-effect {
+    transition: all 0.2s linear 0s;
+}
+
+.btn-effect.sp-effect:before {
+    content: "\f054";
+    font-family: FontAwesome;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 30px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    transform: scale(0,1);
+    transform-origin: left center;
+    transition: all 0.2s linear 0s;
+}
+    
+.btn-effect.sp-effect:hover {
+    text-indent: 30px;
+}
+
+.nav-colored .btn-effect.sp-effect:hover {
+    background-color: #0275d8;
+    border-color: #0275d8;
+    color: #000;
+}
+
+.btn-effect.sp-effect:hover::before {
+    transform: scale(1,1);
+    text-indent: 0;
+}
+
+/* @media(max-width: 960px) {
+
+} */

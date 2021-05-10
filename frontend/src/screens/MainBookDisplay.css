@@ -1,0 +1,21 @@
+.map-image {
+    width: 635px !important;
+}
+
+.map-location {
+    margin-top: 14px;
+}
+
+.book-name-input {
+    width: 92%;
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .map-image {
+        width: 530px !important;
+    }
+
+    .book-name-input {
+        width: 76%;
+    }    
+}
