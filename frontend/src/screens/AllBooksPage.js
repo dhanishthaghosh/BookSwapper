@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Navbar from "react-bootstrap/Navbar"
 import Card from "react-bootstrap/Card"
 import SearchBar from "../components/SearchBar"
+import { Image } from "cloudinary-react"
 import BookImage1 from "../images/WarandPeace.jpg"
 import BookImage2 from "../images/AnnaKarenina.jpg"
 import BookImage3 from "../images/AMidsummerNightsDream.png"
@@ -50,7 +51,8 @@ function AllBooksPage() {
               {books.map(book => (
                 <div className='col-md-4' key={book._id}>
                   <Card>
-                    <Card.Img variant='top' src={book.image} />
+                    {/* <Card.Img variant='top' src={book.image} /> */}
+                    <Image cloudName={`${process.env.REACT_APP_CLOUDINARY_NAME}`} publicId={book.image} />
                     <Card.Body>
                       <Card.Link>
                         <Link to={`/books/${book._id}`}>

@@ -20,10 +20,10 @@ export const bookListReducer = (state = { books: [] }, action) => {
   }
 }
 
-export const bookDetailsReducer = (state = { book: {} }, action) => {
+export const bookDetailsReducer = (state = { book: { owner: {} } }, action) => {
   switch (action.type) {
     case BOOK_DETAILS_REQUEST:
-      return { loading: true, ...state }
+      return { loading: true }
     case BOOK_DETAILS_SUCCESS:
       return { loading: false, book: action.payload }
     case BOOK_DETAILS_FAIL:

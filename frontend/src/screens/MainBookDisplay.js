@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
 import Navbar from "react-bootstrap/Navbar"
+import { Image } from "cloudinary-react"
 // import {ReactComponent as Map} from '../images/MumbaiMap.jpg';
 // var Map = require('../images/MumbaiMap.jpg');
 import Map from "../images/MumbaiMap.jpg"
@@ -42,12 +43,13 @@ const MainBookDisplay = ({ match }) => {
       <div className='container' id='bookDisplay'>
         <div className='row'>
           <div className='col-lg-7 img-fluid map-location'>
-            <img
+            {/* <img
               src={book.image}
               className='map-image'
               alt='Map of Mumbai'
               style={{ height: "50%" }}
-            />
+            /> */}
+            <Image cloudName={`${process.env.REACT_APP_CLOUDINARY_NAME}`} publicId={book.image} className='map-image' alt='Map of Mumbai' height="50%" />
           </div>
 
           <div className='col-lg-5'>
@@ -68,11 +70,11 @@ const MainBookDisplay = ({ match }) => {
               <b>Description:</b> {book.description}
             </p>
 
-            {/* <h3>User Information</h3> */}
-            <p>{/* <b>Name:</b> {book.owner.name ? book.owner.name : ""} */}</p>
+            <h3>User Information</h3>
+            <p><b>Name:</b> {book.owner.name ? book.owner.name : ""}</p>
             <p>
-              {/* <b>Contact No:</b> */}
-              {/* {book.owner.phoneNumber ? book.owner.phoneNumber : ""} */}
+              <b>Contact No:</b>
+              {book.owner.phoneNumber ? book.owner.phoneNumber : ""}
             </p>
             <p>
               <b>Review:</b> The Tempest is a play by English playwright William

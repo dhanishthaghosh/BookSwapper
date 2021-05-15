@@ -13,6 +13,8 @@ import ContactUs from "./components/ContactUs"
 import Intro from "./components/Intro"
 import MainBookDisplay from "./screens/MainBookDisplay"
 import AllBooksPage from "./screens/AllBooksPage"
+import dotenv from "dotenv"
+dotenv.config()
 
 function App() {
   return (
