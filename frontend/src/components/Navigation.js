@@ -108,8 +108,8 @@ function Navigation() {
             </Nav.Link>
 
             <Nav.Link className='nav-link-style'>
-              <Link
-                to=''
+              <DomLink
+                to='/account'
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -117,7 +117,7 @@ function Navigation() {
                 delay={200}
               >
                 Login
-              </Link>
+              </DomLink>
             </Nav.Link>
 
             {button && (

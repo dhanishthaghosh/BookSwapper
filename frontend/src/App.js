@@ -1,9 +1,7 @@
 import React from "react"
 import "./App.css"
 import Navigation from "./components/Navigation"
-import Frontpage from "./screens/Frontpage"
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   BrowserRouter,
@@ -11,8 +9,10 @@ import {
 import AboutUs from "./components/AboutUs"
 import ContactUs from "./components/ContactUs"
 import Intro from "./components/Intro"
+import Frontpage from "./screens/Frontpage"
 import MainBookDisplay from "./screens/MainBookDisplay"
 import AllBooksPage from "./screens/AllBooksPage"
+import Account from "./components/Account"
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
           <Route exact path='/' component={Frontpage} />
           <Route exact path='/books' component={AllBooksPage} />
           <Route exact path='/books/:id' component={MainBookDisplay} />
+          <Route exact path='/account' component={Account} />
 
           {/* <Route exact path='/home' component={Frontpage} />
             <Route exact path='/intro' component={Intro} />
