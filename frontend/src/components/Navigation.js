@@ -2,15 +2,20 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-scroll"
 import { Link as DomLink } from "react-router-dom"
 import "./Navigation.css"
-// import { Button } from './Button';
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
-
 import Button from "react-bootstrap/Button"
-
+import NavDropdown from "react-bootstrap/NavDropdown"
+import { LinkContainer } from "react-router-bootstrap"
+import { useDispatch, useSelector } from "react-redux"
+import { logout } from "../actions/userAction"
 function Navigation() {
   const [button, setButton] = useState(true)
   const [navbar, setNavbar] = useState(false)
+
+  const dispatch = useDispatch()
+  const userLogin = useSelector(state => state.userLogin)
+  const { userInfo } = userLogin
 
   const showButton = () => {
     if (window.innerWidth <= 760) {
@@ -19,12 +24,10 @@ function Navigation() {
       setButton(true)
     }
   }
-
   useEffect(() => {
     showButton()
   }, [])
   window.addEventListener("resize", showButton)
-
   const changeNavbarBackground = () => {
     if (window.scrollY >= 112) {
       setNavbar(true)
@@ -34,6 +37,9 @@ function Navigation() {
   }
   window.addEventListener("scroll", changeNavbarBackground)
 
+  const logOutHandler = () => {
+    dispatch(logout())
+  }
   return (
     <Navbar
       expand='lg'
@@ -60,11 +66,6 @@ function Navigation() {
 
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ml-auto'>
-
-            <Nav.Link className='nav-link-style'>
-              <DomLink to='/bookupload'>Upload a Book</DomLink>
-            </Nav.Link>
-
             <Nav.Link className='nav-link-style'>
               <DomLink to='/books'>Books</DomLink>
             </Nav.Link>
@@ -108,21 +109,21 @@ function Navigation() {
               </Link>
             </Nav.Link>
 
-            <Nav.Link className='nav-link-style'>
-              <DomLink
-                to='/login'
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500}
-                delay={200}
-              >
-                Login
-              </DomLink>
-            </Nav.Link>
+            {userInfo ? (
+              <NavDropdown title={userInfo.name} id='username'>
+                <LinkContainer to='/user/booklist'>
+                  <NavDropdown.Item>Profile</NavDropdown.Item>
+                </LinkContainer>
+                <NavDropdown.Item onClick={logOutHandler}>
+                  Log Out
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : null}
 
-            {button && (
-              <Button className='btn-effect sp-effect'><DomLink to='/signup'>Sign Up</DomLink></Button>
+            {!userInfo && button && (
+              <Button className='btn-effect sp-effect'>
+                <DomLink to='/login'>Sign Up</DomLink>
+              </Button>
             )}
           </Nav>
         </Navbar.Collapse>
