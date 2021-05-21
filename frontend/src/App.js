@@ -12,7 +12,9 @@ import Intro from "./components/Intro"
 import Frontpage from "./screens/Frontpage"
 import MainBookDisplay from "./screens/MainBookDisplay"
 import AllBooksPage from "./screens/AllBooksPage"
-import Account from "./components/Account"
+import UploadForm from "./components/BookUploads/UploadForm"
+import Login from "./components/Account/Login"
+import Signup from "./components/Account/Signup"
 
 function App() {
   return (
@@ -23,7 +25,9 @@ function App() {
           <Route exact path='/' component={Frontpage} />
           <Route exact path='/books' component={AllBooksPage} />
           <Route exact path='/books/:id' component={MainBookDisplay} />
-          <Route exact path='/account' component={Account} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={Signup} />
+          <Route exact path='/bookupload' component={UploadForm} />
 
           {/* <Route exact path='/home' component={Frontpage} />
             <Route exact path='/intro' component={Intro} />

@@ -60,12 +60,13 @@ function Navigation() {
 
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ml-auto'>
+
             <Nav.Link className='nav-link-style'>
-              <DomLink to='/bookDisplay'>BookDisplay</DomLink>
+              <DomLink to='/bookupload'>Upload a Book</DomLink>
             </Nav.Link>
 
             <Nav.Link className='nav-link-style'>
-              <DomLink to='/books'>AllBooks</DomLink>
+              <DomLink to='/books'>Books</DomLink>
             </Nav.Link>
 
             <Nav.Link className='nav-link-style'>
@@ -109,7 +110,7 @@ function Navigation() {
 
             <Nav.Link className='nav-link-style'>
               <DomLink
-                to='/account'
+                to='/login'
                 spy={true}
                 smooth={true}
                 offset={0}
@@ -121,7 +122,7 @@ function Navigation() {
             </Nav.Link>
 
             {button && (
-              <Button className='btn-effect sp-effect'>Sign Up</Button>
+              <Button className='btn-effect sp-effect'><DomLink to='/signup'>Sign Up</DomLink></Button>
             )}
           </Nav>
         </Navbar.Collapse>

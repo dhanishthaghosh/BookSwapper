@@ -1,0 +1,30 @@
+.form-div-control {
+    display: flex;
+    height: 100vh;
+    margin: auto;
+}
+
+.form-control {
+    margin: auto;
+    height: fit-content;
+}
+
+input {
+    width: 70%;
+    padding: 10px;
+    margin: 0 162px;
+}
+
+#first-box {
+    margin-top: 50px;
+}
+
+#last-box {
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    width: 70%;
+    margin: 0 162px;
+    margin-bottom: 10px;
+}
