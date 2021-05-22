@@ -1,8 +1,13 @@
 import Book from "../models/bookModel.js"
 import asyncHandler from "express-async-handler"
+import cloudinary from "../utils/cloudinary.js"
 
 const getBooks = asyncHandler(async (req, res) => {
-  const books = await Book.find({})
+  const keyword = req.query.search ? {
+    bookname: new RegExp(req.query.search, 'i')
+  } : {};
+
+  const books = await Book.find({ ...keyword })
   res.status(200).json(books)
 })
 
@@ -40,11 +45,20 @@ const updatebook = asyncHandler(async (req, res) => {
 
   const book = await Book.findById(req.params.id)
 
+  const uploadedImageResponse = await cloudinary.uploader.upload(image, {
+    upload_preset: 'Book_Images'
+  })
+
+  if (!uploadedImageResponse) {
+    res.status(404)
+    throw new Error('Error occured while storing bookData in DB')
+  }
+
   if (book) {
     book.bookname = bookname
     book.author = author
     book.description = description
-    book.image = image || book.image
+    book.image = uploadedImageResponse.public_id
     book.publisher = publisher
     book.condition = condition
 

@@ -2,7 +2,7 @@ const books = [
   {
     bookname: "The Power of Your Subconscious Mind",
     // owner: '',
-    image: "/images/The_Power_of_Your_Subconscious_Mind.jpg",
+    image: "Book_Images/spnfsjp790juk7lkeb6b",
     author: "Dr. Joseph Murphy ",
     publisher: "Fingerprint! Publishing",
     condition: "Good",
@@ -12,7 +12,7 @@ const books = [
   {
     bookname: "Rich Dad Poor Dad",
     // owner: '',
-    image: "/images/Rich_Dad_Poor_Dad.jpg",
+    image: "Book_Images/coifyklfrojsto5gtitx",
     author: " Robert T. Kiyosaki ",
     publisher: "Plata Publishing",
     condition: "good",
@@ -22,7 +22,7 @@ const books = [
   {
     bookname: "The Alchemist",
     // owner: '',
-    image: "/images/The_Alchemist.jpg",
+    image: "Book_Images/piohjgnljy29snpa1gtr",
     author: "Paulo Coelho ",
     publisher: "Harper",
     condition: "fair",
@@ -32,7 +32,7 @@ const books = [
   {
     bookname: "The Intelligent Investor ",
     // owner: '',
-    image: "/images/The_Intelligent_Investor.jpg",
+    image: "Book_Images/tbr3flqnm03gt1kpza1r",
     author: "Benjamin Graham ",
     publisher: "Harper Business",
     condition: "good",
@@ -42,7 +42,7 @@ const books = [
   {
     bookname: "Corporate Chanakya",
     // owner: '',
-    image: "/images/Corporate_Chanakya.jpg",
+    image: "Book_Images/st0sndmttdv7tqpn5sfd",
     author: "Radhakrishnan Pillai",
     publisher: "Jaico Publishing House",
     condition: "good",

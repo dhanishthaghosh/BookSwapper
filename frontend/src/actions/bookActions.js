@@ -14,10 +14,10 @@ import {
   BOOK_UPDATE_FAIL,
 } from "../constants/bookConstants"
 
-export const listBooks = () => async dispatch => {
+export const listBooks = (keyword = '') => async dispatch => {
   try {
     dispatch({ type: BOOK_LIST_REQUEST })
-    const { data } = await axios.get("/api/books")
+    const { data } = await axios.get(`/api/books?search=${keyword}`)
     dispatch({
       type: BOOK_LIST_SUCCESS,
       payload: data,

@@ -26,9 +26,9 @@ const RegisterScreen = ({ location, history }) => {
   // if we are already loged in.
   useEffect(() => {
     if (userInfo) {
-      history.push(redirect)
+      history.push("/books")
     }
-  }, [history, userInfo, redirect])
+  }, [history, userInfo])
 
   const submitHandler = e => {
     e.preventDefault()
@@ -90,7 +90,7 @@ const RegisterScreen = ({ location, history }) => {
       <Row className='py-3'>
         <Col>
           Have an Account?{" "}
-          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
+          <Link to={"/login"}>
             Login
           </Link>
         </Col>

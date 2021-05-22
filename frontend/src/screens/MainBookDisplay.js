@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
-import Navbar from "react-bootstrap/Navbar"
+import { Navbar } from "react-bootstrap"
+import { Image } from "cloudinary-react"
 import "./Navigation.css"
 import "./MainBookDisplay.css"
 
@@ -40,16 +41,17 @@ const MainBookDisplay = ({ match }) => {
 
       <div className='container' id='bookDisplay'>
         <div className='row'>
-          <div className='col-lg-7 img-fluid map-location'>
-            <img
+          <div className='col-lg-6 img-fluid map-location'>
+            {/* <img
               src={book.image}
               className='map-image'
               alt='Map of Mumbai'
               style={{ height: "50%" }}
-            />
+            /> */}
+            <Image cloudName={`${process.env.REACT_APP_CLOUDINARY_NAME}`} publicId={book.image} className='book-image' alt='Map of Mumbai' />
           </div>
 
-          <div className='col-lg-5'>
+          <div className='col-lg-6'>
             <h3>Book Information</h3>
             <p>
               <b>Name:</b> {book.bookname}

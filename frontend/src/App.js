@@ -23,6 +23,7 @@ function App() {
           <Route exact path='/' component={Frontpage} />
           <Route exact path='/books' component={AllBooksPage} />
           <Route exact path='/books/:id' component={MainBookDisplay} />
+          <Route path='/search/:keyword' component={AllBooksPage} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/user/booklist' component={UserBooksList} />

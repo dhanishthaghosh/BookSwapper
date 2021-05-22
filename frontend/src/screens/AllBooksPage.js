@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
-import { Link } from "react-router-dom"
-import Navbar from "react-bootstrap/Navbar"
-import Card from "react-bootstrap/Card"
-import SearchBar from "../components/SearchBar"
+import { Link, Route } from "react-router-dom"
+import { Navbar, Card } from "react-bootstrap"
+import { Image } from "cloudinary-react"
+import Search from "../components/Search"
 import BookImage1 from "../images/WarandPeace.jpg"
 import BookImage2 from "../images/AnnaKarenina.jpg"
 import BookImage3 from "../images/AMidsummerNightsDream.png"
@@ -14,14 +14,16 @@ import { useDispatch, useSelector } from "react-redux"
 // import the Action
 import { listBooks } from "../actions/bookActions.js"
 
-function AllBooksPage() {
+function AllBooksPage({ match }) {
+  const keyword = match.params.keyword
+
   const dispatch = useDispatch()
 
   const bookList = useSelector(state => state.bookList)
   const { loading, error, books } = bookList
   useEffect(() => {
-    dispatch(listBooks())
-  }, [dispatch])
+    dispatch(listBooks(keyword))
+  }, [dispatch, keyword])
   return (
     <>
       <Navbar expand='lg' className='nav-colored' id='navbar-component'>
@@ -38,7 +40,7 @@ function AllBooksPage() {
       </Navbar>
 
       <div className='container'>
-        <SearchBar />
+        <Route render={({ history }) => <Search history={history} />}></Route>
 
         <div className='row row-intersection'>
           {loading ? (
@@ -50,7 +52,8 @@ function AllBooksPage() {
               {books.map(book => (
                 <div className='col-md-4' key={book._id}>
                   <Card>
-                    <Card.Img variant='top' src={book.image} />
+                    {/* <Card.Img variant='top' src={book.image} /> */}
+                    <Image cloudName={`${process.env.REACT_APP_CLOUDINARY_NAME}`} publicId={book.image} width="100%" height="350em" />
                     <Card.Body>
                       <Card.Link>
                         <Link to={`/books/${book._id}`}>
