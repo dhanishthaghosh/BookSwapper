@@ -56,6 +56,16 @@ const MainBookDisplay = ({ match, history }) => {
               </NavDropdown>
             ) : null}
           </Navbar.Brand>
+          {userInfo ? (
+            <NavDropdown title={userInfo.name} id='username'>
+              <LinkContainer to='/user/booklist'>
+                <NavDropdown.Item>Your Books</NavDropdown.Item>
+              </LinkContainer>
+              <NavDropdown.Item onClick={logOutHandler}>
+                Log Out
+              </NavDropdown.Item>
+            </NavDropdown>
+          ) : null}
         </div>
       </Navbar>
 
@@ -92,10 +102,10 @@ const MainBookDisplay = ({ match, history }) => {
             <p>
               <b>Name: </b> {book.owner.name ? book.owner.name : ""}
             </p>
-            <p>
+            {/* <p>
               <b>Contact No: </b>
               {book.owner.phoneNumber ? book.owner.phoneNumber : ""}
-            </p>
+            </p> */}
             <p>
               <b>Owner Address: </b>
               {book.owner.address ? book.owner.address : ""}

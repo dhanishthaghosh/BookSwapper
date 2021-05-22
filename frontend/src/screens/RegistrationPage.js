@@ -7,7 +7,7 @@ import Loader from "../components/Loader"
 import { FormContainer } from "../components/FormContainer"
 import { register } from "../actions/userActions"
 
-const RegisterScreen = ({ location, history }) => {
+const RegisterScreen = ({ history }) => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -16,14 +16,10 @@ const RegisterScreen = ({ location, history }) => {
   const [address, setAddress] = useState("")
   const [message, setMessage] = useState(null)
 
-  // const redirect = location.search ? location.search.split('=')[1] : '/'
-
   const dispatch = useDispatch()
   const userRegister = useSelector(state => state.userRegister)
   const { loading, error, userInfo } = userRegister
 
-  // I want to redirect if we are already loged in, I don't want to come to the login secreen
-  // if we are already loged in.
   useEffect(() => {
     if (userInfo) {
       history.push("/books")

@@ -16,25 +16,26 @@ import {
 
 export const listBooks =
   (keyword = "") =>
-    async dispatch => {
-      try {
-        dispatch({ type: BOOK_LIST_REQUEST })
-        const { data } = await axios.get(`/api/books?search=${keyword}`)
-        dispatch({
-          type: BOOK_LIST_SUCCESS,
-          payload: data,
-        })
-      } catch (error) {
-        dispatch({
-          type: BOOK_LIST_FAIL,
-          // sending the Backend Error message to frontend
-          payload:
-            error.response && error.response.data.message
-              ? error.response.data.message
-              : error.message,
-        })
-      }
+
+  async dispatch => {
+    try {
+      dispatch({ type: BOOK_LIST_REQUEST })
+      const { data } = await axios.get(`/api/books?search=${keyword}`)
+      dispatch({
+        type: BOOK_LIST_SUCCESS,
+        payload: data,
+      })
+    } catch (error) {
+      dispatch({
+        type: BOOK_LIST_FAIL,
+        // sending the Backend Error message to frontend
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      })
     }
+  }
 
 export const listBookDetails = id => async dispatch => {
   try {
@@ -72,7 +73,7 @@ export const createBook = id => async (dispatch, getState) => {
     }
 
     const { data } = await axios.post(`/api/books/`, {}, config)
-
+    console.log("sample book created", data)
     dispatch({
       type: BOOK_CREATE_SUCCESS,
       payload: data,

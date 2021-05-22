@@ -67,10 +67,6 @@ function Navigation() {
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='ml-auto'>
             <Nav.Link className='nav-link-style'>
-              <DomLink to='/books'>Books</DomLink>
-            </Nav.Link>
-
-            <Nav.Link className='nav-link-style'>
               <Link
                 to='home'
                 spy={true}
@@ -110,9 +106,17 @@ function Navigation() {
             </Nav.Link>
 
             {userInfo ? (
+              // <LinkContainer to='/user/booklist'>
+              //   <NavDropdown.Item>Profile</NavDropdown.Item>
+              // </LinkContainer>
+              <Nav.Link className='nav-link-style'>
+                <DomLink to='/books'>Books</DomLink>
+              </Nav.Link>
+            ) : null}
+            {userInfo ? (
               <NavDropdown title={userInfo.name} id='username'>
                 <LinkContainer to='/user/booklist'>
-                  <NavDropdown.Item>Profile</NavDropdown.Item>
+                  <NavDropdown.Item>Your Books</NavDropdown.Item>
                 </LinkContainer>
                 <NavDropdown.Item onClick={logOutHandler}>
                   Log Out
@@ -131,19 +135,5 @@ function Navigation() {
     </Navbar>
   )
 }
-
-// var navDisplay = document.getElementById('navbar-component');
-//     window.onscroll = function () {
-//         "use strict";
-//         console.log("ghosh " + navDisplay);
-//         if (document.body.scrollTop >= 200 ) {
-//             navDisplay.classList.add("nav-colored");
-//             navDisplay.classList.remove("nav-transparent");
-//         }
-//         else {
-//             navDisplay.classList.add("nav-transparent");
-//             navDisplay.classList.remove("nav-colored");
-//         }
-// };
 
 export default Navigation
