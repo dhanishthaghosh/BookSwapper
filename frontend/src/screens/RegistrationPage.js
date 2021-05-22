@@ -7,7 +7,7 @@ import Loader from "../components/Loader"
 import { FormContainer } from "../components/FormContainer"
 import { register } from "../actions/userActions"
 
-const RegisterScreen = ({ location, history }) => {
+const RegisterScreen = ({ history }) => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -16,19 +16,15 @@ const RegisterScreen = ({ location, history }) => {
   const [address, setAddress] = useState("")
   const [message, setMessage] = useState(null)
 
-  // const redirect = location.search ? location.search.split('=')[1] : '/'
-
   const dispatch = useDispatch()
   const userRegister = useSelector(state => state.userRegister)
   const { loading, error, userInfo } = userRegister
 
-  // I want to redirect if we are already loged in, I don't want to come to the login secreen
-  // if we are already loged in.
   useEffect(() => {
     if (userInfo) {
-      history.push(redirect)
+      history.push("/books")
     }
-  }, [history, userInfo, redirect])
+  }, [history, userInfo])
 
   const submitHandler = e => {
     e.preventDefault()
@@ -89,10 +85,7 @@ const RegisterScreen = ({ location, history }) => {
       </Form>
       <Row className='py-3'>
         <Col>
-          Have an Account?{" "}
-          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
-            Login
-          </Link>
+          Have an Account? <Link to={"/login"}>Login</Link>
         </Col>
       </Row>
     </FormContainer>

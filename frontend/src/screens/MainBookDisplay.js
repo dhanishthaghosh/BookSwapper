@@ -1,6 +1,9 @@
 import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
-import Navbar from "react-bootstrap/Navbar"
+import { Navbar } from "react-bootstrap"
+import NavDropdown from "react-bootstrap/NavDropdown"
+import { LinkContainer } from "react-router-bootstrap"
+import { Image } from "cloudinary-react"
 import "./Navigation.css"
 import "./MainBookDisplay.css"
 
@@ -9,16 +12,22 @@ import { listBookDetails } from "../actions/bookActions"
 import Loader from "../components/Loader"
 import Message from "../components/Message"
 import Map from "../components/Map/Map"
+import { logout } from "../actions/userAction"
 
-const MainBookDisplay = ({ match }) => {
+const MainBookDisplay = ({ match, history }) => {
   const dispatch = useDispatch()
   const bookDetails = useSelector(state => state.bookDetails)
   const { loading, error, book } = bookDetails
-
+  const userLogin = useSelector(state => state.userLogin)
+  const { userInfo } = userLogin
   useEffect(() => {
     dispatch(listBookDetails(match.params.id))
   }, [dispatch, match])
 
+  const logOutHandler = () => {
+    dispatch(logout())
+    history.push("/")
+  }
   return loading ? (
     <Loader />
   ) : error ? (
@@ -35,21 +44,31 @@ const MainBookDisplay = ({ match }) => {
               BookSwapper <i className='fas fa-exchange-alt'></i>
             </Link>
           </Navbar.Brand>
+          {userInfo ? (
+            <NavDropdown title={userInfo.name} id='username'>
+              <LinkContainer to='/user/booklist'>
+                <NavDropdown.Item>Your Books</NavDropdown.Item>
+              </LinkContainer>
+              <NavDropdown.Item onClick={logOutHandler}>
+                Log Out
+              </NavDropdown.Item>
+            </NavDropdown>
+          ) : null}
         </div>
       </Navbar>
 
       <div className='container' id='bookDisplay'>
         <div className='row'>
-          <div className='col-lg-7 img-fluid map-location'>
-            <img
-              src={book.image}
-              className='map-image'
+          <div className='col-lg-6 img-fluid map-location'>
+            <Image
+              cloudName={`${process.env.REACT_APP_CLOUDINARY_NAME}`}
+              publicId={book.image}
+              className='book-image'
               alt='Map of Mumbai'
-              style={{ height: "50%" }}
             />
           </div>
 
-          <div className='col-lg-5'>
+          <div className='col-lg-6'>
             <h3>Book Information</h3>
             <p>
               <b>Name:</b> {book.bookname}
@@ -71,10 +90,10 @@ const MainBookDisplay = ({ match }) => {
             <p>
               <b>Name: </b> {book.owner.name ? book.owner.name : ""}
             </p>
-            <p>
+            {/* <p>
               <b>Contact No: </b>
               {book.owner.phoneNumber ? book.owner.phoneNumber : ""}
-            </p>
+            </p> */}
             <p>
               <b>Owner Address: </b>
               {book.owner.address ? book.owner.address : ""}

@@ -24,8 +24,8 @@ const App = ({ adrs }) => {
     setViewPort({
       latitude: data.features[0].geometry.coordinates[1],
       longitude: data.features[0].geometry.coordinates[0],
-      width: "100vw",
-      height: "100vh",
+      width: "80vw",
+      height: "80vh",
       zoom: 12,
     })
   }, [adrs])
@@ -44,7 +44,7 @@ const App = ({ adrs }) => {
   }, [])
 
   return (
-    <div>
+    <div style={{ padding: "10px 10%" }}>
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}

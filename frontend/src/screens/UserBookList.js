@@ -1,5 +1,4 @@
 import React, { useEffect } from "react"
-import { LinkContainer } from "react-router-bootstrap"
 import { Table, Button, Row, Col, Container } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import Message from "../components/Message"
@@ -34,7 +33,7 @@ const UserBookList = ({ history, match }) => {
   }, [dispatch, history, userInfo, successCreate, createdBook])
 
   const createBookHandler = () => {
-    // CREATE PRODUCT
+    // CREATE BOOK
     dispatch(createBook())
   }
   return (

@@ -15,6 +15,7 @@ const UploadForm = ({ match, history }) => {
 
   const [bookname, setBookName] = useState("")
   const [image, setImage] = useState("")
+  const [imageEncoded, setImageEncoded] = useState("")
   const [author, setAuthor] = useState("")
   const [publisher, setPublisher] = useState("")
   const [condition, setCondition] = useState("")
@@ -41,7 +42,7 @@ const UploadForm = ({ match, history }) => {
         dispatch(listBookDetails(bookId))
       } else {
         setBookName(book.name)
-        setImage(book.image)
+        setImage(image)
         setAuthor(book.author)
         setPublisher(book.publisher)
         setCondition(book.condition)
@@ -50,6 +51,15 @@ const UploadForm = ({ match, history }) => {
     }
   }, [dispatch, history, bookId, book, successUpdate])
 
+  const handleImageChange = (e) => {
+    const file = e.target.files[0]
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onloadend = () => {
+      setImageEncoded(reader.result)
+    }
+  }
+
   const submitHandler = e => {
     e.preventDefault()
     // UPDATE BOOK
@@ -57,7 +67,7 @@ const UploadForm = ({ match, history }) => {
       updateBook({
         _id: bookId,
         bookname,
-        image,
+        image: imageEncoded,
         author,
         publisher,
         condition,
@@ -126,14 +136,13 @@ const UploadForm = ({ match, history }) => {
                 value={description}
                 onChange={e => setDescription(e.target.value)}
               />
-              {/* <input
+              <input
                 type='file'
                 placeholder='Book image'
                 className='input-control'
                 id='last-box'
-                value={image}
-                onChange={e => setImage(e.target.value)}
-              /> */}
+                onChange={handleImageChange}
+              />
 
               <Button type='submit' className='btn-warning submit-btn'>
                 Upload

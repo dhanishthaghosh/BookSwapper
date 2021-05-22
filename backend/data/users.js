@@ -14,14 +14,14 @@ const users = [
     email: "user2@gmail.com",
     password: bcryptjs.hashSync("123456", 10),
     phoneNumber: "2222222222",
-    address: "H R Mahajani Rd, Matunga, Mumbai, Maharashtra 400019",
+    address: "S Ambazari Rd, Ambazari, Nagpur, Maharashtra 440010",
   },
   {
     name: "User3",
     email: "user3@gmail.com",
     password: bcryptjs.hashSync("123456", 10),
     phoneNumber: "3333333333",
-    address: "H R Mahajani Rd, Matunga, Mumbai, Maharashtra 400019",
+    address: "Indian Institute of Technology Bombay",
   },
 ]
 
