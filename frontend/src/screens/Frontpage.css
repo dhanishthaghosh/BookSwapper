@@ -12,7 +12,7 @@
     color: #e0536c;
 }
 
-h2 {
+.intro h2, .contact h2, .about h2 {
     font-size: 40px;
     font-weight: 500;
 }

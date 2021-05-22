@@ -1,9 +1,7 @@
 import React from "react"
 import "./App.css"
-import Navigation from "./components/Navigation"
 import Frontpage from "./screens/Frontpage"
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   BrowserRouter,
@@ -18,7 +16,6 @@ function App() {
   return (
     <div className='backgroundImage'>
       <BrowserRouter>
-        {/* <Navigation /> */}
         <Switch>
           <Route exact path='/' component={Frontpage} />
           <Route exact path='/books' component={AllBooksPage} />
@@ -28,17 +25,10 @@ function App() {
           <Route exact path='/register' component={Register} />
           <Route exact path='/user/booklist' component={UserBooksList} />
           <Route exact path='/user/book/:id/edit' component={UploadBook} />
-          {/* <Route exact path='/home' component={Frontpage} />
-            <Route exact path='/intro' component={Intro} />
-            <Route exact path='/aboutus' component={AboutUs} />
-            <Route exact path='/contactus' component={ContactUs} />
-            <Route exact path='/bookDisplay' component={MainBookDisplay} />
-            <Route exact path='/allBooks' component={AllBooksPage} /> 
-          */}
         </Switch>
       </BrowserRouter>
     </div>
   )
 }
 
-export default App
+export default App;

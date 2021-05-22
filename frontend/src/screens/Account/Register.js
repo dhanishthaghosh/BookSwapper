@@ -33,7 +33,7 @@ export default function Register({ history }) {
 
     //Dispatch REGISTER
     if (password !== confirmPassword) {
-      setMessage("Password do not Match")
+      setMessage("Passwords do not Match")
     } else {
       dispatch(register(name, email, phoneNumber, address, password))
     }
@@ -73,7 +73,7 @@ export default function Register({ history }) {
               onChange={e => setEmail(e.target.value)}
             />
             <input
-              type='number'
+              type='tel'
               placeholder='Your mobile number'
               className='input-control'
               value={phoneNumber}

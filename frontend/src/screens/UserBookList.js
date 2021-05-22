@@ -1,10 +1,14 @@
 import React, { useEffect } from "react"
-import { Table, Button, Row, Col, Container } from "react-bootstrap"
+import { Link } from "react-router-dom"
+import { Table, Button, Row, Col, Container, Navbar, NavDropdown } from "react-bootstrap"
+import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
 import { createBook } from "../actions/bookActions"
 import { BOOK_CREATE_RESET } from "../constants/bookConstants"
+import { logout } from "../actions/userAction"
+import "./Navigation.css"
 
 const UserBookList = ({ history, match }) => {
   const dispatch = useDispatch()
@@ -36,16 +40,56 @@ const UserBookList = ({ history, match }) => {
     // CREATE BOOK
     dispatch(createBook())
   }
+
+  const logOutHandler = () => {
+    dispatch(logout())
+    history.push("/")
+  }
+
   return (
     <>
+      <Navbar expand='lg' className='nav-colored' id='navbar-component'>
+        <div className='container'>
+          <Navbar.Brand id='branding-nonmain' className='text-center'>
+            <Link
+              to='/'
+              className='router-links text-center align-self-center justify-content-center'>
+              BookSwapper <i className='fas fa-exchange-alt'></i>
+            </Link>
+            {/* {userInfo ? (
+              <NavDropdown title={userInfo.name} id='username'>
+                <LinkContainer to='/user/booklist'>
+                  <NavDropdown.Item>Your Books</NavDropdown.Item>
+                </LinkContainer>
+                <NavDropdown.Item onClick={logOutHandler}>
+                  Log Out
+              </NavDropdown.Item>
+              </NavDropdown>
+            ) : null} */}
+          </Navbar.Brand>
+
+          {userInfo ? (
+            <NavDropdown title={userInfo.name} id='username'>
+              <LinkContainer to='/user/booklist'>
+                <NavDropdown.Item>My Books</NavDropdown.Item>
+              </LinkContainer>
+              <NavDropdown.Item onClick={logOutHandler}>
+                Log Out
+              </NavDropdown.Item>
+            </NavDropdown>
+          ) : null}
+        </div>
+      </Navbar>
+
+
       <Container style={{ height: "100vh" }}>
         <Row className='align-items-center'>
           <Col>
-            <h1>Your Books</h1>
+            <h2>My Books</h2>
           </Col>
           <Col className='text-right'>
             <Button className='my-3' onClick={createBookHandler}>
-              <i className='fas fa-plus'></i> Create Book
+              <i className='fas fa-plus'></i> Upload Book
             </Button>
           </Col>
         </Row>

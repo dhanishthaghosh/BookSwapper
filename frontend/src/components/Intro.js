@@ -11,7 +11,7 @@ export default function Intro() {
                     <h2>Who we are?</h2>
                     <p>A group of book and tech lovers who came with an idea to bridge the gap between people who love to share books and love.<br/>
                     Because why not? Sharing is after all caring.<br/>
-                    So why wait when you can join us, and spread the love of books you have in your heart? <Link to='/signup' className='joining-link'>Sign Up today</Link>.
+                    So why wait when you can join us, and spread the love of books you have in your heart? <Link to='/register' className='joining-link'>Sign Up today</Link>.
                     </p>
                 </div>
                 <div className="col img-fluid">

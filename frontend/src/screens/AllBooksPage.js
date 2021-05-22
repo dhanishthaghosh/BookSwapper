@@ -51,7 +51,7 @@ function AllBooksPage({ match, history }) {
           {userInfo ? (
             <NavDropdown title={userInfo.name} id='username'>
               <LinkContainer to='/user/booklist'>
-                <NavDropdown.Item>Your Books</NavDropdown.Item>
+                <NavDropdown.Item>My Books</NavDropdown.Item>
               </LinkContainer>
               <NavDropdown.Item onClick={logOutHandler}>
                 Log Out
@@ -64,7 +64,7 @@ function AllBooksPage({ match, history }) {
       <div className='container'>
         <Route render={({ history }) => <Search history={history} />}></Route>
 
-        <div className='row row-intersection'>
+        <div className='row'>
           {loading ? (
             <Loader />
           ) : error ? (
@@ -73,7 +73,7 @@ function AllBooksPage({ match, history }) {
             <>
               {books.map(book => (
                 <div className='col-md-4' key={book._id}>
-                  <Card>
+                  <Card className='intersection'>
                     {/* <Card.Img variant='top' src={book.image} /> */}
                     <Image
                       cloudName={`${process.env.REACT_APP_CLOUDINARY_NAME}`}

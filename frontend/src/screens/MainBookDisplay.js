@@ -41,25 +41,25 @@ const MainBookDisplay = ({ match, history }) => {
           <Navbar.Brand id='branding-nonmain' className='text-center'>
             <Link
               to='/'
-              className='router-links text-center align-self-center justify-content-center'
-            >
+              className='router-links text-center align-self-center justify-content-center'>
               BookSwapper <i className='fas fa-exchange-alt'></i>
             </Link>
-            {userInfo ? (
+            {/* {userInfo ? (
               <NavDropdown title={userInfo.name} id='username'>
                 <LinkContainer to='/user/booklist'>
-                  <NavDropdown.Item>Your Books</NavDropdown.Item>
+                  <NavDropdown.Item></NavDropdown.Item>
                 </LinkContainer>
                 <NavDropdown.Item onClick={logOutHandler}>
                   Log Out
               </NavDropdown.Item>
               </NavDropdown>
-            ) : null}
+            ) : null} */}
           </Navbar.Brand>
+
           {userInfo ? (
             <NavDropdown title={userInfo.name} id='username'>
               <LinkContainer to='/user/booklist'>
-                <NavDropdown.Item>Your Books</NavDropdown.Item>
+                <NavDropdown.Item>My Books</NavDropdown.Item>
               </LinkContainer>
               <NavDropdown.Item onClick={logOutHandler}>
                 Log Out
@@ -71,7 +71,7 @@ const MainBookDisplay = ({ match, history }) => {
 
       <div className='container' id='bookDisplay'>
         <div className='row'>
-          <div className='col-lg-6 img-fluid map-location'>
+          <div className='col-lg-6 img-fluid image-styles'>
             <Image
               cloudName={`${process.env.REACT_APP_CLOUDINARY_NAME}`}
               publicId={book.image}
@@ -80,7 +80,7 @@ const MainBookDisplay = ({ match, history }) => {
             />
           </div>
 
-          <div className='col-lg-6'>
+          <div className='col-lg-6 information'>
             <h3>Book Information</h3>
             <p>
               <b>Name:</b> {book.bookname}
@@ -102,10 +102,10 @@ const MainBookDisplay = ({ match, history }) => {
             <p>
               <b>Name: </b> {book.owner.name ? book.owner.name : ""}
             </p>
-            {/* <p>
-              <b>Contact No: </b>
-              {book.owner.phoneNumber ? book.owner.phoneNumber : ""}
-            </p> */}
+            <p>
+              <b>Email: </b>
+              {book.owner.email ? book.owner.email : ""}
+            </p>
             <p>
               <b>Owner Address: </b>
               {book.owner.address ? book.owner.address : ""}

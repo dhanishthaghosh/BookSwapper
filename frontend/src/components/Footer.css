@@ -7,7 +7,13 @@
     color:mintcream;
     padding-top: 25px;
     /* padding-bottom: 25px; */
-    font-size: large;
+    justify-content: center;
+}
+
+.footer-header h3 {
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
 }
 
 .footer-sub-header {
@@ -26,7 +32,6 @@
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    cursor: pointer;
 }
 
 .footer-nav, .footer-item-links, .footer-links {
@@ -47,6 +52,12 @@
     color: mintcream;
     font-size: large;
     padding-top: 12px;    
+}
+
+.contact-column a:hover {
+    color: #c9a0ff;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 992px) {

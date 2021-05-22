@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-scroll"
 import { Link as DomLink } from "react-router-dom"
-import "./Navigation.css"
+import "../screens/Navigation.css"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
 import Button from "react-bootstrap/Button"
@@ -9,6 +9,8 @@ import NavDropdown from "react-bootstrap/NavDropdown"
 import { LinkContainer } from "react-router-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { logout } from "../actions/userAction"
+
+
 function Navigation() {
   const [button, setButton] = useState(true)
   const [navbar, setNavbar] = useState(false)
@@ -119,7 +121,9 @@ function Navigation() {
             {userInfo ? (
               <NavDropdown title={userInfo.name} id='username'>
                 <LinkContainer to='/user/booklist'>
-                  <NavDropdown.Item>Your Books</NavDropdown.Item>
+                  <NavDropdown.Item>
+                    My Books
+                  </NavDropdown.Item>
                 </LinkContainer>
                 <NavDropdown.Item onClick={logOutHandler}>
                   Log Out

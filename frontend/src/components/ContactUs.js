@@ -7,8 +7,13 @@ function ContactUs() {
         <div className="container">
            <div className="row front-page-style" id="contactus">
                 <div className="col my-auto contact">
-                    <h2>LQu'est-ce que le Lorem Ipsum?</h2>
-                    <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié.
+                    <h2>Have a query or suggestion?</h2>
+                    <p>You can contact any of our creators by dropping an email<br/>
+                    Dhanishtha Ghosh - dsghosh_b19@it.vjti.ac.in<br/>
+                    Dixit Mendon - dnmendon_b18@el.vjti.ac.in<br/>
+                    Nishant Dongre - nadongre_b19@el.vjti.ac.in<br/>
+                    Vanshita Singh - vrsingh_b19@ce.vjti.ac.in<br/>
+                    Or else, drop an email on our official email at bookswapperquery@gmail.com
                     </p>
                 </div>
                 <div className="col img-fluid">

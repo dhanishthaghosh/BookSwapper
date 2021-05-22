@@ -90,6 +90,8 @@ const UploadForm = ({ match, history }) => {
           </Navbar.Brand>
         </div>
       </Navbar>
+
+      
       {loadingUpdate && <Loader />}
       {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
       {loading ? (
@@ -103,8 +105,7 @@ const UploadForm = ({ match, history }) => {
               <input
                 type='text'
                 placeholder='Book name'
-                className='input-control'
-                id='first-box'
+                className='input-control first-box'
                 value={bookname}
                 onChange={e => setBookName(e.target.value)}
               />
@@ -139,8 +140,7 @@ const UploadForm = ({ match, history }) => {
               <input
                 type='file'
                 placeholder='Book image'
-                className='input-control'
-                id='last-box'
+                className='input-control last-box'
                 onChange={handleImageChange}
               />
 

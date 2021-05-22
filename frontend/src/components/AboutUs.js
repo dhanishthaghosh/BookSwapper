@@ -17,7 +17,7 @@ function AboutUs() {
                     Search for a book you wish to have/read in our Books section<br/>
                     If you find the book of your choice, you can then see the details of the person willing to give their book by clicking the book title<br/>
                     You can then go forward and email that person regarding the book and how to swap it<br/>
-                    So what are waiting for? Have some books you are willing to share? <Link to='/signup' className='joining-link'>Join us today</Link>.
+                    So what are waiting for? Have some books you are willing to share? <Link to='/register' className='joining-link'>Join us today</Link>.
                     </p>
                 </div>
             </div>
