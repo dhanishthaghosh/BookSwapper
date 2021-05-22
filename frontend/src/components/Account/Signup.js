@@ -18,7 +18,7 @@ export default function Signup() {
             <div className='form-div-control'>
                 <form className='form-control'>
                     <input type='text' placeholder='Your full name' className='input-control' id='first-box' />
-                    <input type='text' placeholder='Your email' className='input-control' />
+                    <input type='email' placeholder='Your email' className='input-control' />
                     <input type='tel' placeholder='Your mobile number' className='input-control' />
                     <input type='textarea' placeholder='Your residential address' className='input-control' />
                     <input type='password' placeholder='Set a password' className='input-control'/>

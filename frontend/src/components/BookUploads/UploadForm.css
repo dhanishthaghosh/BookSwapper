@@ -7,6 +7,7 @@
 .form-control {
     margin: auto;
     height: fit-content;
+    /* align-items: center; */
 }
 
 input {
@@ -15,11 +16,11 @@ input {
     margin: 0 162px;
 }
 
-#first-box {
+.first-box {
     margin-top: 50px;
 }
 
-#last-box {
+.last-box {
     margin-bottom: 20px;
 }
 
@@ -27,4 +28,45 @@ input {
     width: 70%;
     margin: 0 162px;
     margin-bottom: 10px;
+    color: #ffffff;
+    background-color: #01796f;
+    border-color: #01796f;
+}
+
+.submit-btn:hover {
+    color: #ffffff;
+    background-color: #017369;
+    border-color: #017369;
+}
+
+.select-label input [type="file"] {
+    display: none;
+    visibility: hidden;
+    position: relative;
+    color: transparent;
+    opacity: 0;
+}
+
+.select-label {
+    padding: 12px;
+    border: 3px solid dimgray;
+    background-color: gainsboro;
+    display: inline-block;
+}
+
+.select-label:hover {
+    background-color: lightgray;
+}
+
+.input-control {
+    padding: 10px;
+}
+
+.input-control:focus {
+    outline: none;
+    border: none;
+}
+
+.input-control:focus {
+    border-bottom: 2px solid #01796f;
 }

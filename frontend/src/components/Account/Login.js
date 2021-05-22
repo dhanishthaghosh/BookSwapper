@@ -17,7 +17,7 @@ export default function Login() {
         <div className='container'>
             <div className='form-div-control'>
                 <form className='form-control'>
-                    <input type='text' placeholder='Your email' className='input-control' id='first-box' />
+                    <input type='email' placeholder='Your email' className='input-control' id='first-box' />
                     <input type='password' placeholder='Your password' className='input-control' id='last-box'/>
 
                     <Button type='submit' className='btn-warning submit-btn'>Login</Button>

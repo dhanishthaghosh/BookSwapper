@@ -62,11 +62,11 @@ function Navigation() {
           <Nav className='ml-auto'>
 
             <Nav.Link className='nav-link-style'>
-              <DomLink to='/bookupload'>Upload a Book</DomLink>
+              <DomLink to='/bookupload' className='dom-link-style'>Upload a Book</DomLink>
             </Nav.Link>
 
             <Nav.Link className='nav-link-style'>
-              <DomLink to='/books'>Books</DomLink>
+              <DomLink to='/books' className='dom-link-style'>Books</DomLink>
             </Nav.Link>
 
             <Nav.Link className='nav-link-style'>
@@ -77,6 +77,7 @@ function Navigation() {
                 offset={0}
                 duration={500}
                 delay={200}
+                activeClass='active-nav-link-style'
               >
                 Home
               </Link>
@@ -90,6 +91,7 @@ function Navigation() {
                 offset={0}
                 duration={500}
                 delay={200}
+                activeClass='active-nav-link-style'
               >
                 About Us
               </Link>
@@ -103,6 +105,7 @@ function Navigation() {
                 offset={0}
                 duration={500}
                 delay={200}
+                activeClass='active-nav-link-style'
               >
                 Contact Us
               </Link>
@@ -111,18 +114,14 @@ function Navigation() {
             <Nav.Link className='nav-link-style'>
               <DomLink
                 to='/login'
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500}
-                delay={200}
+                className='dom-link-style'
               >
                 Login
               </DomLink>
             </Nav.Link>
 
             {button && (
-              <Button className='btn-effect sp-effect'><DomLink to='/signup'>Sign Up</DomLink></Button>
+              <Button className='btn-effect sp-effect'><DomLink to='/signup' className='btn-link-style'>Sign Up</DomLink></Button>
             )}
           </Nav>
         </Navbar.Collapse>
@@ -145,4 +144,4 @@ function Navigation() {
 //         }
 // };
 
-export default Navigation
+export default Navigation;

@@ -25,12 +25,14 @@ function UploadForm() {
                 </HeaderContainer> */}
 
                     <form className='form-control'>
-                        <input type="text" placeholder="Book name" className='input-control' id='first-box' />
+                        <input type="text" placeholder="Book name" className='input-control first-box'/>
                         <input type="text" placeholder="Author name" className='input-control'/>
                         <input type="text" placeholder="Publisher" className='input-control'/>
                         <input type="text" placeholder="Condition" className='input-control'/>
                         <input type="textarea" placeholder="Book description" className='input-control'/>
-                        <input type="file" placeholder="Book image" className="input-control" id='last-box'/>
+                        <input type="file" className='input-control last-box' id='files'/>
+                        
+                        {/* <label for='files' className='select-label'><input type="file" className='input-control last-box' id='files'/><span>Select a book image</span></label> */}
 
                         <Button type='submit' className='btn-warning submit-btn'>Upload</Button>
                     </form>
