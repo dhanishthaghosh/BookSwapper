@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {ReactComponent as Book} from '../images/Books.svg';
-import './Frontpage.css';
+import '../screens/Frontpage.css';
 
 function AboutUs() {
     return(

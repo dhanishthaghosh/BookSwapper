@@ -113,7 +113,7 @@ function Navigation() {
               //   <NavDropdown.Item>Profile</NavDropdown.Item>
               // </LinkContainer>
               <Nav.Link className='nav-link-style'>
-                <DomLink to='/books'>Books</DomLink>
+                <DomLink to='/books' className='dom-link-style'>Books</DomLink>
               </Nav.Link>
             ) : null}
             {userInfo ? (
@@ -127,11 +127,18 @@ function Navigation() {
               </NavDropdown>
             ) : null}
 
+            {!userInfo && (
+              <Nav.Link className='nav-link-style'>
+                <DomLink to='/login' className='dom-link-style'>Login</DomLink>
+              </Nav.Link>
+            )}
+
             {!userInfo && button && (
               <Button className='btn-effect sp-effect'>
-                <DomLink to='/login'>Sign Up</DomLink>
+                <DomLink to='/register' className='btn-link-style'>Sign Up</DomLink>
               </Button>
             )}
+
           </Nav>
         </Navbar.Collapse>
       </div>
@@ -139,4 +146,4 @@ function Navigation() {
   )
 }
 
-export default Navigation
+export default Navigation;

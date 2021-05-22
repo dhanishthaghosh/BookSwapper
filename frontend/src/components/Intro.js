@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {ReactComponent as Bibliophile} from '../images/Bibliophile.svg';
-import './Frontpage.css';
+import '../screens/Frontpage.css';
 
 export default function Intro() {
     return (

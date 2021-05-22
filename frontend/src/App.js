@@ -33,7 +33,8 @@ function App() {
             <Route exact path='/aboutus' component={AboutUs} />
             <Route exact path='/contactus' component={ContactUs} />
             <Route exact path='/bookDisplay' component={MainBookDisplay} />
-            <Route exact path='/allBooks' component={AllBooksPage} /> */}
+            <Route exact path='/allBooks' component={AllBooksPage} /> 
+          */}
         </Switch>
       </BrowserRouter>
     </div>
