@@ -1,29 +1,37 @@
 import React, { useEffect } from "react"
 import { Link, Route } from "react-router-dom"
 import { Navbar, Card } from "react-bootstrap"
+import NavDropdown from "react-bootstrap/NavDropdown"
+import { LinkContainer } from "react-router-bootstrap"
 import { Image } from "cloudinary-react"
 import Search from "../components/Search"
-import BookImage1 from "../images/WarandPeace.jpg"
-import BookImage2 from "../images/AnnaKarenina.jpg"
-import BookImage3 from "../images/AMidsummerNightsDream.png"
-import BookImage4 from "../images/TheGodfather.jpg"
 import "./AllBooksPage.css"
 import Loader from "../components/Loader"
 import Message from "../components/Message"
 import { useDispatch, useSelector } from "react-redux"
 // import the Action
 import { listBooks } from "../actions/bookActions.js"
+import { logout } from "../actions/userAction"
 
-function AllBooksPage({ match }) {
+function AllBooksPage({ match, history }) {
   const keyword = match.params.keyword
 
   const dispatch = useDispatch()
 
   const bookList = useSelector(state => state.bookList)
   const { loading, error, books } = bookList
+
+  const userLogin = useSelector(state => state.userLogin)
+  const { userInfo } = userLogin
   useEffect(() => {
     dispatch(listBooks(keyword))
   }, [dispatch, keyword])
+
+  const logOutHandler = () => {
+    dispatch(logout())
+    history.push("/")
+  }
+
   return (
     <>
       <Navbar expand='lg' className='nav-colored' id='navbar-component'>
@@ -36,6 +44,16 @@ function AllBooksPage({ match }) {
               BookSwapper <i className='fas fa-exchange-alt'></i>
             </Link>
           </Navbar.Brand>
+          {userInfo ? (
+            <NavDropdown title={userInfo.name} id='username'>
+              <LinkContainer to='/user/booklist'>
+                <NavDropdown.Item>Your Books</NavDropdown.Item>
+              </LinkContainer>
+              <NavDropdown.Item onClick={logOutHandler}>
+                Log Out
+              </NavDropdown.Item>
+            </NavDropdown>
+          ) : null}
         </div>
       </Navbar>
 
@@ -53,7 +71,12 @@ function AllBooksPage({ match }) {
                 <div className='col-md-4' key={book._id}>
                   <Card>
                     {/* <Card.Img variant='top' src={book.image} /> */}
-                    <Image cloudName={`${process.env.REACT_APP_CLOUDINARY_NAME}`} publicId={book.image} width="100%" height="350em" />
+                    <Image
+                      cloudName={`${process.env.REACT_APP_CLOUDINARY_NAME}`}
+                      publicId={book.image}
+                      width='100%'
+                      height='350em'
+                    />
                     <Card.Body>
                       <Card.Link>
                         <Link to={`/books/${book._id}`}>

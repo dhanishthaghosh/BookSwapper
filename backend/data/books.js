@@ -39,15 +39,6 @@ const books = [
     description:
       "It is a widely acclaimed book by Benjamin Graham on value investing. Written by one of the greatest investment advisers of twentieth century, the book aims at preventing potential investors from substantial errors and also teaches them strategies to achieve long-term investment goals.Over the years, investment market has been following teachings and strategies of Graham for growth and development. In the book, Graham has explained various principles and strategies for investing safely and successfully without taking bigger risks. Modern-day investors still continue to use his proven and well-executed techniques for value investment. The current edition highlights some of the important concepts that are useful for latest financial orders and plans. Keeping Graham's unique text in original form, the book focuses on major principles that can be applied in day-to-day life. All the concepts and principles are explained with the help of examples for better clarity and understanding of the financial world.Combination of original plan of Graham and the current financial situations are the reason behind this book’s preference today’s investors. It is a detailed version with several wisdom quotes that are likely to change one’s investing career and lead to the path of financial safety and security.",
   },
-  {
-    bookname: "Corporate Chanakya",
-    // owner: '',
-    image: "Book_Images/st0sndmttdv7tqpn5sfd",
-    author: "Radhakrishnan Pillai",
-    publisher: "Jaico Publishing House",
-    condition: "good",
-    description:
-      "A pioneer of economics and political science in India, Chanakya was one of the most brilliant, tactful and shrewd economists and strategists of the Mauryan Era. Building the entire Mauryan Empire can be attributed to Chanakya's witty principles and out of the box strategies. The modern day world is a witness to innumerable business empires which need effective management to remain at par with growing competition. The author makes use of the aphorisms or sutras proposed in Chanakya's book called Arthasastra (Economics), in the management and functioning of modern day businesses.Corporate Chanakya is divided into three major sections - Leadership, Management and Training. The author chooses the most apt sutras to provide tricks to achieve success in all these fields. in the leadership section he explains the importance of a leader's foresight, vision, enthusiasm and positive approach to handling situations. The author also gives you tips on making effective decisions, time management and creating a lasting impact to generate business. Corporate professionals and leaders, small and big scale entrepreneurs and even students aspiring to work in the corporate environment can make use of Corporate Chanakya for lasting success. The first edition of this book was published by Jaico Publishing House in 2010 and is available in paperback.",
-  },
+
 ]
 export default books
