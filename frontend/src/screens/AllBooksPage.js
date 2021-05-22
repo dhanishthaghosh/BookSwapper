@@ -12,6 +12,8 @@ import { useDispatch, useSelector } from "react-redux"
 // import the Action
 import { listBooks } from "../actions/bookActions.js"
 import { logout } from "../actions/userAction"
+
+
 function AllBooksPage({ match, history }) {
   const keyword = match.params.keyword
 
@@ -19,15 +21,21 @@ function AllBooksPage({ match, history }) {
 
   const bookList = useSelector(state => state.bookList)
   const { loading, error, books } = bookList
+
+  
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin
   useEffect(() => {
     dispatch(listBooks(keyword))
   }, [dispatch, keyword])
+
+  
   const logOutHandler = () => {
     dispatch(logout())
     history.push("/")
   }
+
+
   return (
     <>
       <Navbar expand='lg' className='nav-colored' id='navbar-component'>

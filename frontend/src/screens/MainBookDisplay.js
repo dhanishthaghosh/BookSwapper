@@ -18,6 +18,7 @@ const MainBookDisplay = ({ match, history }) => {
   const dispatch = useDispatch()
   const bookDetails = useSelector(state => state.bookDetails)
   const { loading, error, book } = bookDetails
+
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin
   useEffect(() => {
@@ -28,6 +29,7 @@ const MainBookDisplay = ({ match, history }) => {
     dispatch(logout())
     history.push("/")
   }
+
   return loading ? (
     <Loader />
   ) : error ? (
@@ -43,6 +45,16 @@ const MainBookDisplay = ({ match, history }) => {
             >
               BookSwapper <i className='fas fa-exchange-alt'></i>
             </Link>
+            {userInfo ? (
+              <NavDropdown title={userInfo.name} id='username'>
+                <LinkContainer to='/user/booklist'>
+                  <NavDropdown.Item>Your Books</NavDropdown.Item>
+                </LinkContainer>
+                <NavDropdown.Item onClick={logOutHandler}>
+                  Log Out
+              </NavDropdown.Item>
+              </NavDropdown>
+            ) : null}
           </Navbar.Brand>
           {userInfo ? (
             <NavDropdown title={userInfo.name} id='username'>
