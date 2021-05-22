@@ -1,14 +1,5 @@
 # BookSwapper
 
-## Team Members
-- Dhanishtha Ghosh
-- Dixit Mendon
-- Nishant Dongre
-- Vanshita Singh
-
-## Mentor
-- Sayush Kamat
-
 ## Description
 
 Our project tries to create to a platform for conducting the traditional book swapping in a more sophisticated manner.
@@ -17,10 +8,13 @@ Our project tries to create to a platform for conducting the traditional book sw
 - Search for a book you wish to have/read in our Books section
 - If you find the book of your choice, you can then see the details of the person willing to give their book by clicking the book title
 - Detailed information about book and user are available on the page, after clicking the book title of any book in the Books section
-- You may also view their location on our embedded Map built with the help of Google Maps API
+- You may also view their location on our embedded Map built with the help of Mapbox API
 - You can then go forward and email that person regarding the book and how to swap it
+- You can also upload books of your own in the My Books section inside your account name 
 
 ----
+
+## Steps to run
 
 Steps to run our project on your local machine:
 1. Clone our repository
@@ -58,12 +52,11 @@ cd ..
 npm run dev
 ````
 
-8. Along with the above command, you need to start the mongo server to connect with the backend. Refer to this [official Mongo Docs](https://docs.mongodb.com/manual/administration/install-community/) for the same.
-
 ----
 
 - GitHub Repository Link: [BookSwapper](https://github.com/dhanishthaghosh/BookSwapper)
-- Google Drive Link (for images): [BookSwapper-images]() 
+- Google Drive Link (for images): [BookSwapper-images](https://drive.google.com/drive/folders/1ML3VXxbuGjcQH0yNg1UcC3IQ5GWcv8Eo?usp=sharing) 
+
 
 ## Technology Stack
 - HTML
@@ -81,9 +74,6 @@ npm run dev
 - Not interested in buying and selling, but rather sharing, you are in the right place!
 - Getting to know the location of the person so that we know how much distance to cover beforehand
 
-## What did I learn from this project
-
-1. Dhanistha Ghosh - Learned a whole lot about React, and JS itself; bits and pieces of MongoDB too.
 
 ## Future scope
 
@@ -94,3 +84,13 @@ npm run dev
 ----
 
 ## Screenshots
+
+![Home Page](./demo-images/1.png "Home Page")
+
+![Sign Up Page](./demo-images/4.png "Sign Up Page")
+
+![Books Page](./demo-images/5.png "Books Image") 
+
+![Book Upload](./demo-images/7.png "Book Upload")
+
+![Map](./demo-images/10.png "Map showing user")
