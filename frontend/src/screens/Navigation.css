@@ -134,6 +134,51 @@
     text-indent: 0;
 }
 
-/* @media(max-width: 960px) {
+.dom-link-style {
+    color: #353839;
+}
 
-} */
+.dom-link-style:hover {
+    color: #E4007C;
+    text-decoration: none;
+}
+
+.btn-link-style {
+    color: #ffffff;
+}
+
+.btn-link-style:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-colored .dom-link-style {
+    color: mintcream;
+}
+
+.nav-colored .dom-link-style:hover {
+    color: #FFAA1D;
+}
+
+.active-nav-link-style {
+    /* color: #cea2fd;      early bird */
+    /* color: #b19cd9;     pale purple */
+    color: #c9a0ff;     /* good tax */
+    text-decoration: none;
+}
+
+.active-nav-link-style:hover {
+    color: #c9a0ff;
+    text-decoration: none;
+}
+
+.nav-colored .btn-link-style {
+    color: #000000;
+}
+
+@media(max-width: 960px) {
+    .btn-effect {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}

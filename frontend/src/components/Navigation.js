@@ -74,6 +74,7 @@ function Navigation() {
                 offset={0}
                 duration={500}
                 delay={200}
+                activeClass='active-nav-link-style'
               >
                 Home
               </Link>
@@ -87,6 +88,7 @@ function Navigation() {
                 offset={0}
                 duration={500}
                 delay={200}
+                activeClass='active-nav-link-style'
               >
                 About Us
               </Link>
@@ -100,6 +102,7 @@ function Navigation() {
                 offset={0}
                 duration={500}
                 delay={200}
+                activeClass='active-nav-link-style'
               >
                 Contact Us
               </Link>
